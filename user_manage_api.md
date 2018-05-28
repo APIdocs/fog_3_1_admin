@@ -7,6 +7,11 @@
 * entirely api path: host + prefix + api
 
 ---
+## Token 说明
+* Token认证标识 表示请求该接口必须携带token
+* 携带token方法：设置headers: Authorization : token klk4terlg....
+
+---
 ## api示例 接口
  **接口地址**
  >
