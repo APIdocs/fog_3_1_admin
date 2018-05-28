@@ -149,12 +149,54 @@
    }
  ```
  
- ## api 接口
+ ## 新建权限组 接口
  **接口地址**
- >
+ > POST /v3_1/manage/newGroup/(Token认证)
  **请求示例**
  ```
+ POST /v3_1/manage/newGroup/
+ 
+ {
+  "name": "财务组"
+  }
+   
  ```
+ **请求参数说明**
+ 
+| 参数 | 类型 | 必须 | 说明 |
+|:----:|:----:|:----:|:----:|
+|name|varchar|yes|新建组名称|
+
+**返回参数**
+```
+{
+  "meta": {
+            "code": 0,
+            "message": "ok"
+            },
+  "data": {
+            "name": "财务组",
+            "id": 3,
+            }
+ }
+            
+```
+**返回参数说明**
+
+| 参数 | 类型 |说明 |
+|:----:|:----:|:----:|
+|id|int|组编号|
+|name|varchar|组名称|
+
+## 组列表 接口
+ **接口地址**
+ > GET /v3_1/manage/groupList/(Token认证)
+ 
+ **请求示例**
+ ```
+ GET /v3_1/manage/groupList/
+ ```
+ 
  **请求参数说明**
  
 | 参数 | 类型 | 必须 | 说明 |
@@ -162,12 +204,144 @@
 
 **返回参数**
 ```
+{
+    "meta": {
+        "message": "ok",
+        "code": 0
+    },
+    "data":[
+        {
+            "id": 5,
+            "name": "财务组"
+        },
+        {
+            "id": 2,
+            "name": "Finance"
+        }
+    ]
+}
 ```
+
 **返回参数说明**
 
 | 参数 | 类型 |说明 |
 |:----:|:----:|:----:|
-  
-        
+|id|int|组编号|
+|name|varchar|组名称|
+
+## 权限组下用户列表 接口
+ **接口地址**
+ > GET /v3_1/manage/groupUser/(Token认证)
+ 
+ **请求示例**
+ ```
+ GET /v3_1/manage/groupUser/?group_id=1
+ ```
+ 
+ **请求参数说明**
+ 
+| 参数 | 类型 | 必须 | 说明 |
+|:----:|:----:|:----:|:----:|
+|group_id|int|yes|组编号|
+
+**返回参数**
+```
+{
+    "meta": {
+        "message": "ok",
+        "code": 0
+    },
+    "data": [
+        {
+            "id": 3,
+            "email": "wxd@mxchip.com",
+            "groups": [
+                {
+                    "id": 1,
+                    "name": "Sales"
+                },
+                {
+                    "id": 3,
+                    "name": "Fog"
+                },
+                {
+                    "id": 5,
+                    "name": "财务组"
+                }
+            ],
+            "username": "cfz",
+            "is_staff": false,
+            "is_superuser": true,
+            "date_joined": "2018-01-10 16:56:23"
+        },
+        {
+            "id": 36,
+            "email": "adminyun@mxchip.com",
+            "groups": [
+                {
+                    "id": 1,
+                    "name": "Sales"
+                }
+            ],
+            "username": "fogcloud",
+            "is_staff": false,
+            "is_superuser": false,
+            "date_joined": "2018-03-02 16:52:36"
+        }
+    ]
+}
+```
+
+**返回参数说明**
+
+| 参数 | 类型 |说明 |
+|:----:|:----:|:----:|
+|groups|list|用户所属组|
+|username|varchar|用户名称|
+|is_staff|varchar|是否是admin用户|
+|is_superuser|varchar|是否是超级用户|
+|date_joined|datetime|用户注册时间|
+
+---
+## 权限组下的模块列表 接口
+ **接口地址**
+ > GET /v3_1/manage/groupModule/(Token认证)
+ 
+ **请求示例**
+ ```
+ GET /v3_1/manage/groupModule/?group_id=1
+ ```
+ 
+ **请求参数说明**
+ 
+| 参数 | 类型 | 必须 | 说明 |
+|:----:|:----:|:----:|:----:|
+|group_id|int|yes|组编号|
+
+**返回参数**
+```
+{
+    "meta": {
+        "message": "ok",
+        "code": 0
+    },
+    "data": {
+        "module_id": 1,
+        "module_name": "权限管理",
+        "module_ename": "user manage"
+    }
+}
+
+```
+
+**返回参数说明**
+
+| 参数 | 类型 |说明 |
+|:----:|:----:|:----:|
+|module_id|int|模块编号|
+|module_name|varchar|模块名称|
+|module_e_name|varchar|模块英语名称|
+
+---
   
 
