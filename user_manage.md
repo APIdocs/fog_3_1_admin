@@ -1,5 +1,12 @@
 # 用户管理 接口文档
 
+## HOST 说明
+* dev host: https://cnapitest.fogcloud.io
+* production host: https://cnapi.fogcloud.io
+* api prefix: /v3_1
+* entirely api path: host + prefix + api
+
+---
 ## api示例 接口
  **接口地址**
  >
@@ -22,6 +29,7 @@
 | 参数 | 类型 |说明 |
 |:----:|:----:|:----:|
   
+ ---
 ## admin 用户登陆 接口
 **接口地址**
 
@@ -82,6 +90,7 @@
 |is_superuser|varchar|是否是超级用户|
 |date_joined|datetime|用户注册时间|
 
+---
 ## 获取验证码 接口
 
 **接口地址**
@@ -149,10 +158,11 @@
    }
  ```
  
- ## 新建权限组 接口
- **接口地址**
- > POST /v3_1/manage/newGroup/(Token认证)
- **请求示例**
+--- 
+## 新建权限组 接口
+**接口地址**
+> POST /v3_1/manage/newGroup/(Token认证)
+**请求示例**
  ```
  POST /v3_1/manage/newGroup/
  
@@ -188,6 +198,7 @@
 |id|int|组编号|
 |name|varchar|组名称|
 
+---
 ## 组列表 接口
  **接口地址**
  > GET /v3_1/manage/groupList/(Token认证)
@@ -229,6 +240,7 @@
 |id|int|组编号|
 |name|varchar|组名称|
 
+---
 ## 权限组下用户列表 接口
  **接口地址**
  > GET /v3_1/manage/groupUser/(Token认证)
@@ -343,5 +355,3 @@
 |module_e_name|varchar|模块英语名称|
 
 ---
-  
-
