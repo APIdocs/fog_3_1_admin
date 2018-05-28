@@ -30,10 +30,10 @@
 |:----:|:----:|:----:|
   
  ---
-## admin 用户登陆 接口
+## admin 用户登陆 接口(Token认证)
 **接口地址**
 
-> POST /v3_1/manage/login/(Token认证)
+> POST /v3_1/manage/login/
  
 **请求参数示例**
  ```
@@ -159,9 +159,9 @@
  ```
  
 --- 
-## 新建权限组 接口
+## 新建权限组 接口(Token认证)
 **接口地址**
-> POST /v3_1/manage/newGroup/(Token认证)
+> POST /v3_1/manage/newGroup/
 **请求示例**
  ```
  POST /v3_1/manage/newGroup/
@@ -199,9 +199,9 @@
 |name|varchar|组名称|
 
 ---
-## 组列表 接口
+## 组列表 接口(Token认证)
  **接口地址**
- > GET /v3_1/manage/groupList/(Token认证)
+ > GET /v3_1/manage/groupList/
  
  **请求示例**
  ```
@@ -241,9 +241,9 @@
 |name|varchar|组名称|
 
 ---
-## 权限组下用户列表 接口
+## 权限组下用户列表 接口(Token认证)
  **接口地址**
- > GET /v3_1/manage/groupUser/(Token认证)
+ > GET /v3_1/manage/groupUser/
  
  **请求示例**
  ```
@@ -315,9 +315,9 @@
 |date_joined|datetime|用户注册时间|
 
 ---
-## 权限组下的模块列表 接口
+## 权限组下的模块列表 接口(Token认证)
  **接口地址**
- > GET /v3_1/manage/groupModule/(Token认证)
+ > GET /v3_1/manage/groupModule/
  
  **请求示例**
  ```
