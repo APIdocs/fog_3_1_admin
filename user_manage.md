@@ -91,7 +91,33 @@
 |date_joined|datetime|用户注册时间|
 
 ---
-## 获取验证码 接口
+## admin用户注销 接口(Token认证)
+ **接口地址**
+ > POST /manage/logout/
+ 
+ **请求示例**
+ ```
+ POST /manage/logout/
+ ```
+ 
+ **请求参数说明**
+ 
+| 参数 | 类型 | 必须 | 说明 |
+|:----:|:----:|:----:|:----:|
+
+**返回参数**
+```
+{
+    "meta": {
+        "message": "Successfully logout",
+        "code": 0
+    },
+    "data": {}
+ }
+```
+
+---
+## 重置密码获取验证码 接口
 
 **接口地址**
 
