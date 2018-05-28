@@ -162,6 +162,7 @@
 ## 新建权限组 接口(Token认证)
 **接口地址**
 > POST /v3_1/manage/newGroup/
+
 **请求示例**
  ```
  POST /v3_1/manage/newGroup/
