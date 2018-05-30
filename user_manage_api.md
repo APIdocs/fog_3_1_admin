@@ -199,7 +199,8 @@
  POST /v3_1/manage/newGroup/
  
  {
-  "name": "财务组"
+  "name": "财务组",
+  "modules": [1,2,3]
   }
    
  ```
@@ -208,6 +209,7 @@
 | 参数 | 类型 | 必须 | 说明 |
 |:----:|:----:|:----:|:----:|
 |name|varchar|yes|新建组名称|
+|modules|list|yes|新建组下模块|
 
 **返回参数**
 ```
@@ -271,6 +273,7 @@
 |:----:|:----:|:----:|
 |id|int|组编号|
 |name|varchar|组名称|
+
 
 ---
 ## 权限组下用户列表 接口(Token认证)
@@ -346,6 +349,7 @@
 |is_superuser|varchar|是否是超级用户|
 |date_joined|datetime|用户注册时间|
 
+
 ---
 ## 权限组下的模块列表 接口(Token认证)
  **接口地址**
@@ -386,4 +390,44 @@
 |module_name|varchar|模块名称|
 |module_e_name|varchar|模块英语名称|
 
+
 ---
+## 模块列表 接口(Token认证)
+ **接口说明**
+ * 获取所有的模块列表
+ 
+ **接口地址**
+ > GET /manage/moduleList/
+ 
+ **请求示例**
+ ```
+ GET /manage/moduleList/
+ ```
+
+**返回参数**
+```
+{
+    "meta": {
+        "message": "ok",
+        "code": 0
+    },
+    "data": [
+        {
+            "id": 2,
+            "name": "配额管理"
+        },
+        {
+            "id": 1,
+            "name": "客户管理"
+     }
+    ]
+}
+```
+
+**返回参数说明**
+
+| 参数 | 类型 |说明 |
+|:----:|:----:|:----:|
+|id|int|模块ID|
+|name|varchar|模块名称|
+|
