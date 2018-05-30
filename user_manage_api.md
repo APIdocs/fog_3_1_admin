@@ -192,11 +192,11 @@
 --- 
 ## 新建权限组 接口(Token认证)
 **接口地址**
-> POST /v3_1/manage/newGroup/
+> POST /v3_1/manage/group/
 
 **请求示例**
  ```
- POST /v3_1/manage/newGroup/
+ POST /v3_1/manage/group/
  
  {
   "name": "财务组",
@@ -221,6 +221,7 @@
   "data": {
             "name": "财务组",
             "id": 3,
+            "hash_name": "lkfjkl3r4jtlferkglefjl3jr3l45j3lklxnfdjd"
             }
  }
             
@@ -231,6 +232,39 @@
 |:----:|:----:|:----:|
 |id|int|组编号|
 |name|varchar|组名称|
+|hash_name|varchar|组名称的hash值|
+
+
+--- 
+## 删除权限组 接口(Token认证)
+**接口地址**
+> DELETE /v3_1/manage/group/
+
+**请求示例**
+ ```
+ DELETE /v3_1/manage/group/?group_id=13
+ ```
+ **请求参数说明**
+ 
+| 参数 | 类型 | 必须 | 说明 |
+|:----:|:----:|:----:|:----:|
+|group_id|varchar|yes|删除组编号|
+
+**返回参数**
+```
+{
+  "meta": {
+            "code": 0,
+            "message": "ok"
+            }
+ }
+            
+```
+**返回参数说明**
+
+| 参数 | 类型 |说明 |
+|:----:|:----:|:----:|
+
 
 ---
 ## 组列表 接口(Token认证)
