@@ -38,7 +38,7 @@
 ## admin 用户登陆 接口(Token认证)
 **接口地址**
 
-> POST /v3_1/manage/login/
+> POST /manage/login/
  
 **请求参数示例**
  ```
