@@ -310,6 +310,66 @@
 
 
 ---
+## 组下添加用户 接口
+ **接口地址**
+ > POST /manage/newUser/
+ 
+ **请求示例**
+ ```
+ {
+     "email": wangxd@mxchip.com",
+     "username": "wangxd",
+     "is_superuser": 0,
+     "groups": [1]
+  }
+ ```
+ 
+ **请求参数说明**
+ 
+| 参数 | 类型 | 必须 | 说明 |
+|:----:|:----:|:----:|:----:|
+|email|varchar|yes|用户登陆邮箱|
+|username|varchar|yes|用户名|
+|is_superuser|bool|no|是否设置为超级用户|
+|groups|list|yes|用户拥有的权限组|
+
+**返回参数**
+```
+{
+    "meta": {
+        "message": "ok",
+        "code": 0
+    },
+    "data": {
+        "id": 50,
+        "email": "Hellokitty@gmail.com",
+        "groups": [
+            {
+                "id": 1,
+                "name": "Sales",
+                "hash_name": "d0edfb6e8c55c8742a83f0f192886e0e15fa0347"
+            }
+        ],
+        "username": "HelloKitty",
+        "is_staff": true,
+        "is_superuser": true,
+        "date_joined": "2018-05-31 16:14:23"
+    }
+}
+```
+
+**返回参数说明**
+
+| 参数 | 类型 |说明 |
+|:----:|:----:|:----:|
+|id|int|用户id|
+|email|varchar|用户邮箱|
+|username|varchar|用户名称|
+|is_staff|varchar|是否是admin用户|
+|is_superuser|varchar|是否是超级用户|
+|data_joined|datetime|注册时间|
+  
+---
 ## 权限组下用户列表 接口(Token认证)
  **接口地址**
  > GET /v3_1/manage/groupUser/
