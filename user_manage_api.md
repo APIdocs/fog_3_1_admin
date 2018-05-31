@@ -316,12 +316,12 @@
  
  **请求示例**
  ```
- {
-     "email": wangxd@mxchip.com",
-     "username": "wangxd",
-     "is_superuser": 0,
-     "groups": [1]
-  }
+{
+	"email": "Hellokitty@gmail.com",
+	"username": "HelloKitty",
+	"is_superuser": 1,
+	"groups": [1]
+}
  ```
  
  **请求参数说明**
