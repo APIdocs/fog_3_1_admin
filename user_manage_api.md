@@ -524,4 +524,64 @@
 |:----:|:----:|:----:|
 |id|int|模块ID|
 |name|varchar|模块名称|
-|
+
+
+## admin用户列表 接口(Token认证)
+ **接口地址**
+ > GET /manage/userList/
+ 
+ **请求示例**
+ ```
+ GET /manage/userList/
+ ```
+
+**返回参数**
+```
+{
+    "meta": {
+        "message": "ok",
+        "code": 0
+    },
+    "data": [
+        {
+            "id": 8,
+            "email": "fog@mxchip.com",
+            "groups": [],
+            "username": "admin",
+            "is_staff": true,
+            "is_superuser": true,
+            "date_joined": "2018-01-12 14:42:39",
+            "last_login": "2018-01-12 14:43:17"
+        }
+    ]
+}
+```
+
+## 添加用户到组 接口
+ **接口地址**
+ > PUT /manage/groupUser/
+ 
+ **请求示例**
+ ```
+ {
+	"groups": [1],
+	"users": [48]
+}
+ 
+ ```
+ 
+ **请求参数说明**
+ 
+| 参数 | 类型 | 必须 | 说明 |
+|:----:|:----:|:----:|:----:|
+|users|list|yes|添加到组的用户列表|
+|groups|list|yes|添加用户的组|
+**返回参数**
+```
+{
+    "meta": {
+        "message": "ok",
+        "code": 0
+    }
+}
+```
