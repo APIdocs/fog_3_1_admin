@@ -368,7 +368,32 @@
 |is_staff|varchar|是否是admin用户|
 |is_superuser|varchar|是否是超级用户|
 |data_joined|datetime|注册时间|
-  
+
+---
+## 组下删除用户 接口
+ **接口地址**
+ > DELETE /manage/newUser/
+ 
+ **请求示例**
+ ```
+DELETE /manage/newuser/?user_id=62
+ ```
+ 
+ **请求参数说明**
+ 
+| 参数 | 类型 | 必须 | 说明 |
+|:----:|:----:|:----:|:----:|
+|user_id|int|yes|删除的用户ID|
+
+**返回参数**
+```
+{
+    "meta": {
+        "message": "ok",
+        "code": 0
+    }
+ }
+```
 ---
 ## 权限组下用户列表 接口(Token认证)
  **接口地址**
