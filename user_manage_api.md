@@ -530,10 +530,15 @@
  **接口地址**
  > GET /manage/userList/
  
- **请求示例**
+**请求示例**
  ```
- GET /manage/userList/
+ GET /manage/userList/?group_id=1
  ```
+ **请求参数说明**
+ 
+| 参数 | 类型 | 必须 | 说明 |
+|:----:|:----:|:----:|:----:|
+|group_id|int|yes|组id|
 
 **返回参数**
 ```
