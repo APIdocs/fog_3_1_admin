@@ -376,7 +376,7 @@
  
  **请求示例**
  ```
-DELETE /manage/newuser/?user_id=62
+DELETE /manage/newUser/?user_id=62
  ```
  
  **请求参数说明**
