@@ -700,3 +700,104 @@ DELETE /manage/newUser/?user_id=62
 |module_id|int|模块编号|
 |module_name|varchar|模块名称|
 
+---
+## 获取用户详情 接口
+ **接口地址**
+ > GET manage/newUser/
+ 
+ **请求示例**
+ ```
+ GET /manage/newUser/?user_id=53
+ ```
+ 
+ **请求参数说明**
+ 
+| 参数 | 类型 | 必须 | 说明 |
+|:----:|:----:|:----:|:----:|
+|user_id|int|yes|用户编号|
+
+**返回参数**
+```
+{
+    "meta": {
+        "message": "ok",
+        "code": 0
+    },
+    "data": {
+        "id": 53,
+        "username": "hamasaki",
+        "email": "12321@qq.com",
+        "is_staff": true,
+        "is_superuser": true,
+        "date_joined": "2018-06-07 13:38:38",
+        "groups": [
+            {
+                "id": 1,
+                "name": "Sales Group"
+            }
+        ],
+        "last_login": null,
+        "modules": [
+            {
+                "module_id": 2,
+                "module__name": "配额管理"
+            }
+        ]
+    }
+}
+```
+
+**返回参数说明**
+
+| 参数 | 类型 |说明 |
+|:----:|:----:|:----:|
+|id|int|用户编号|
+|username|varchar|用户名称|
+|email|varchar|用户邮箱|
+|is_superuser|bool|是否超级用户|
+|date_joined|datetime|用户注册时间|
+|last_login|datetime|用户最后登陆时间|
+|groups|list|用户所有组列表|
+
+
+---
+## 更新用户信息 接口
+ **接口地址**
+ > PUT /manage/newUser/
+ 
+ **请求示例**
+ ```
+ {
+ 	"user_id": 53,
+	"username": "wangxingd",
+	"email": "wxd@mxchip.com",
+	"is_superuser": 1,
+	"groups": [1,2]
+}
+ ```
+ 
+ **请求参数说明**
+ 
+| 参数 | 类型 | 必须 | 说明 |
+|:----:|:----:|:----:|:----:|
+|user_id|int|yes|用户ID|
+|username|varchar|no|用户名称|
+|email|varchar|no|用户邮箱|
+|is_superuser|varchar|no|是否超级管理员|
+|groups|list|no|用户组列表|
+
+**返回参数**
+```
+{
+    "meta": {
+        "message": "ok",
+        "code": 0
+    }
+}
+```
+
+**返回参数说明**
+
+| 参数 | 类型 |说明 |
+|:----:|:----:|:----:|
+
