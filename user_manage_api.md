@@ -616,3 +616,87 @@ DELETE /manage/newUser/?user_id=62
     }
 }
 ```
+
+---
+## 更新组信息 接口
+ **接口地址**
+ > PUT /manage/group/
+ 
+ **请求示例**
+ ```
+ {
+ 	"group_id": 1,
+	"name": "Sales Group",
+	"modules": [1,3]
+}
+ ```
+ 
+ **请求参数说明**
+ 
+| 参数 | 类型 | 必须 | 说明 |
+|:----:|:----:|:----:|:----:|
+|group_id|int|yes|组编号|
+|name|varchar|no|更新组名称|
+|modules|list|no|更新模块列表|
+
+**返回参数**
+```
+{
+	"meta": {
+		"code":0,
+		"message":"ok"
+		},
+	"data":{}
+}
+```
+
+**返回参数说明**
+
+| 参数 | 类型 |说明 |
+|:----:|:----:|:----:|
+
+---
+## 获取组详情 接口
+ **接口地址**
+ > GET /manage/group/
+ 
+ **请求示例**
+ ```
+ GET /manage/group/?group_id=1
+ ```
+ 
+ **请求参数说明**
+ 
+| 参数 | 类型 | 必须 | 说明 |
+|:----:|:----:|:----:|:----:|
+|group_id|int|yes|组编号|
+**返回参数**
+```
+{
+    "meta": {
+        "message": "ok",
+        "code": 0
+    },
+    "data": {
+        "modules": [
+            {
+                "module_id": 2,
+                "module_name": "配额管理"
+            }
+        ],
+        "id": 1,
+        "name": "Sales Group"
+    }
+}
+```
+
+**返回参数说明**
+
+| 参数 | 类型 |说明 |
+|:----:|:----:|:----:|
+|id|int|组编号|
+|name|varchar|组名称|
+|modules|list|组模块列表|
+|module_id|int|模块编号|
+|module_name|varchar|模块名称|
+
