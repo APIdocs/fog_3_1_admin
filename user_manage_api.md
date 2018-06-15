@@ -376,7 +376,7 @@
  
  **请求示例**
  ```
-DELETE /manage/newUser/?user_id=62
+DELETE /manage/newUser/?user_id=62&group_id=1
  ```
  
  **请求参数说明**
@@ -384,6 +384,7 @@ DELETE /manage/newUser/?user_id=62
 | 参数 | 类型 | 必须 | 说明 |
 |:----:|:----:|:----:|:----:|
 |user_id|int|yes|删除的用户ID|
+|group_id|int|yes|用户所属组id|
 
 **返回参数**
 ```
