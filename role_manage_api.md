@@ -67,7 +67,12 @@
                 "username": "Hamasaki",
                 "email": "",
                 "is_active": true,
-                "date_joined": "2018-03-23 10:19:32"
+                "date_joined": "2018-03-23 10:19:32"，
+                "principal":[
+                              {"user__username": "fkk",
+                              "user_id":3
+                              }
+                           ]
             }...
 }
 ```
@@ -81,6 +86,8 @@
 |email|varcar|客户邮箱|
 |is_active|bool|客户是否激活|
 |date_joined|datetime|客户注册时间|
+|user_username|varchar|客户负责人名称|
+|user_id|int|客户负责人编号|
 
 ---
 ## 销售人员列表 接口
@@ -119,7 +126,11 @@ GET /manage/role/sales/?page=2
                 "date_joined": "2018-06-11 10:20:49",
                 "groups": [
                     3
-                ]
+                ]，
+                "customer":[
+                {"customer__username":"h",
+                "customer_id": 4
+                }
             }...
   }
 ```
@@ -135,5 +146,37 @@ GET /manage/role/sales/?page=2
 |is_staff|bool|销售是否是admin用户|
 |date_joined|datetime|客户注册时间|
 |groups|list|销售所属组|
+|customer__username|varchar|客户名称|
+|customer_id|varchar|客户编号|
 
-  
+---
+## 客户分配 接口
+ **接口地址**
+ > POST /manage/role/customerAssign/
+ 
+ **请求示例**
+ ```
+ {
+     "user_id": 1,
+     "customer_id": 2
+  }
+ ```
+ 
+ **请求参数说明**
+ 
+| 参数 | 类型 | 必须 | 说明 |
+|:----:|:----:|:----:|:----:|
+|user_id|int|yes|销售用户编号|
+|customer_id|int|yes|客户用户编号|
+
+**返回参数**
+```
+{
+    "meta": {
+        "message": "ok",
+        "code": 0
+    }
+}
+```
+
+
