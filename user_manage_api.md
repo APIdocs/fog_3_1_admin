@@ -176,7 +176,7 @@
 |username|varchar|yes|登陆邮箱|
 |vercode|varchar|yes|验证码|
 |password|varchar|yes|重置密码参数|
-|password|varchar|yes|重置密码参数2|
+|password2|varchar|yes|重置密码参数2|
 
 **返回参数**
 ```
