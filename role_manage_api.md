@@ -158,7 +158,7 @@ GET /manage/role/sales/?page=2
  ```
  {
      "user_id": 1,
-     "customer_id": 2
+     "customer_id": [49,2]
   }
  ```
  
@@ -167,7 +167,7 @@ GET /manage/role/sales/?page=2
 | 参数 | 类型 | 必须 | 说明 |
 |:----|:----|:----|:----|
 |user_id|int|yes|销售用户编号|
-|customer_id|int|yes|客户用户编号|
+|customer_id|list|yes|客户用户编号|
 
 **返回参数**
 ```
