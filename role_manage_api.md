@@ -41,13 +41,17 @@
  
  **请求示例**
  ```
- GET /manage/role/customer/?page=2
+ 1. GET /manage/role/customer/?page=2&list_type=assign
+ 2. GET /manage/role/customer/?page=1&list_type=all
  ```
  
  **请求参数说明**
  
 | 参数 | 类型 | 必须 | 说明 |
 |:----|:----|:----|:----|
+|page|int|no|页码|
+|page_size|int|no|每页数量|
+|list_type|varchar|yes|请求类型，assign(可分配客户), all(全部客户)|
 
 **返回参数**
 ```
