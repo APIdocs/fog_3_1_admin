@@ -183,4 +183,34 @@ GET /manage/role/sales/?page=2
 }
 ```
 
+---
+## 删除销售下的客户 接口
+ **接口地址**
+ > DELETE /manage/role/customerManage/[customer_id]/
+ 
+ **请求示例**
+ ```
+ DELETE /manage/role/customerManage/17/
+ 
+ {
+   "user_id": 3
+ }
+ ```
+ 
+ **请求参数说明**
+ 
+| 参数 | 类型 | 必须 | 说明 |
+|:----|:----|:----|:----|
+|user_id|int|yes|销售的用户ID|
+
+**返回参数**
+```
+{
+    "meta": {
+        "message": "ok",
+        "code": 0
+    },
+    "data": {}
+}
+```
 
